@@ -1,0 +1,29 @@
+/* style-desktop.css */
+
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+#sidebar.show {
+    left: 0;
+}
+
+/* Tamanho do título e margem do main */
+main h1 {
+    font-size: 48px;
+}
+
+main {
+    margin-left: 250px;
+}
+
+/* Esconder o menu hambúrguer */
+.menu-toggle {
+    display: none;
+}

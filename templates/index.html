@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download de Músicas e Vídeos | Media Download</title>
+    
+    <!-- SEO -->
+    <meta name="description" content="Faça o download de suas músicas e vídeos favoritos de forma rápida e segura. Encontre playlists populares, artistas e mais.">
+    <meta name="keywords" content="download músicas, baixar músicas, baixar vídeos, músicas grátis, vídeos grátis, playlists, artistas">
+    
+    <!-- Link para o CSS externo -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style-common.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style-desktop.css') }}" media="(min-width: 1024px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style-mobile.css') }}" media="(max-width: 1023px)">
+</head>
+
+<body>
+
+    <div class="waves">
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    <div class="content-wrapper">
+        <!-- Conteúdo principal da página -->
+    </div>
+
+    <!-- Botão de menu (hambúrguer) no canto inferior direito -->
+    <div class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Menu lateral compacto -->
+    <aside id="sidebar">
+        <div class="logo">
+            Media Download
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Músicas Populares</a></li>
+                <li><a href="#">Playlists</a></li>
+                <li><a href="#">Artistas</a></li>
+            </ul>
+        </nav>
+        <div class="footer">
+            &copy; 2024 Media Download
+        </div>
+    </aside>
+
+    <main>
+        <h1>Baixar Músicas e Vídeos</h1>
+        <form action="/baixar" method="post">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <label for="entrada">Entrada (URL ou Nome):</label>
+                <input type="text" name="entrada" id="entrada" placeholder="Cole aqui o link ou nome" required>
+        
+                <label for="tipo">Formato:</label>
+                <select id="tipo" name="tipo">
+                    <option value="musica">Música</option>
+                    <option value="video">Vídeo</option>
+                </select>
+            </div>
+        
+            <button type="submit" style="margin-top: 15px;">Baixar</button>
+        </form>        
+        
+    </main>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
